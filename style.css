@@ -6,11 +6,12 @@ body{
   font-family: "Lexend Zetta";
   border: 5px solid #000;
   padding: 50px;
-  }
+a
+}
 form{background-color: #ddd;
-  background-size: 100%;
-  border: 5px dashed #000;
-  border size: 100%;
+background-size: 100%;
+  border: 2px dashed #000;
+
 }
 h1{
   color: #a00;
