@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap');
+
+body{
+  background: url(http://www.baltana.com/files/wallpapers-5/Background-Design-High-Definition-Wallpaper-16244.jpg);
+  background-size: cover;
+  font-family: "Lexend Zetta";
+  border: 5px solid #000;
+  padding: 50px;
+  padding-left: 500px;
+  padding-right: 500px;
+}
+form{background-color: #ddd;
+
+  border: 5px dashed #000;
+}
+h1{
+  color: #a00;
+}
