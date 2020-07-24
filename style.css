@@ -4,11 +4,13 @@ body{
   background: url(http://www.baltana.com/files/wallpapers-5/Background-Design-High-Definition-Wallpaper-16244.jpg);
   background-size: cover;
   font-family: "Lexend Zetta";
-    padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
 
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 500px;
+  padding-right: 500px;
+  word-spacing: 5px;
+  letter-spacing: 2px;
 }
 form{background-color: #ddd;
 background-size: 100%;
