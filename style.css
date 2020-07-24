@@ -3,6 +3,7 @@
 body{
   background: url(http://www.baltana.com/files/wallpapers-5/Background-Design-High-Definition-Wallpaper-16244.jpg);
   background-size: cover;
+  background-size: auto;
   font-family: "Lexend Zetta";
 
   padding-top: 50px;
