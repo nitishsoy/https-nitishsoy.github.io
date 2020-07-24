@@ -4,15 +4,12 @@ body{
   background-size: auto;
   font-family: "Lexend Zetta";
 
-  padding: 100%;
+  padding size: auto;
 }
 
 section{
 border: 10px solid #aaa;
-border-top: 50px;
-border-bottom: 50px;
-border-left: 150px;
-border-right:150px;
+border: auto;
 }
 
 
