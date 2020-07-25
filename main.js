@@ -1,5 +1,5 @@
-/// Your web app's Firebase configuration
-var firebaseConfig = {
+// Your web app's Firebase configuration
+ var firebaseConfig = {
    apiKey: "AIzaSyBNOzSGs-hW4N4JD_-fTLXyV1wfNySVPVo",
    authDomain: "contact-form-d72a3.firebaseapp.com",
    databaseURL: "https://contact-form-d72a3.firebaseio.com",
@@ -11,11 +11,10 @@ var firebaseConfig = {
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
- firebase.database();
-
+ firebase.analytics();
 
   var MessagesRef = firebase.database().ref('messages');
-  document.getElementById('contactform').addEventListener('submit', submitForm);
+  document.getElementById('contact-form').addEventListener('submit', submitForm);
 
 function submitForm(e){
 	e.preventDefault();
