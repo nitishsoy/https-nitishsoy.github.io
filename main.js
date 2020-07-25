@@ -1,5 +1,5 @@
 
-  // Your web app's Firebase configuration
+// Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyBNOzSGs-hW4N4JD_-fTLXyV1wfNySVPVo",
     authDomain: "contact-form-d72a3.firebaseapp.com",
@@ -17,10 +17,10 @@
 
 
 // Reference messages collection
-var messagesRef = firebase.database().ref('messages');
+var contactRef = firebase.database().ref().child('contactForm')
 
 // Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
+document.getElementById('displayForm').addEventListener('submit', submitForm);
 
 // Submit form
 function submitForm(e)
@@ -32,17 +32,18 @@ function submitForm(e)
   var Phone = getInputVal('Phone');
   var Message = getInputVal('Message');
 
-  savemessage(Name,Email,Phone,Message);
+  saveForm(Name,Email,Phone,Message);{
+    document.getElementById('displayForm').reset);
 
-  // Function to get get form values
-function getInputVal(id){
-  return document.getElementById(id).value;
-}
+    // Function to get get form values
+  function getInputVal(id){
+    return document.getElementById(id).value;
+  }
 
 // Save message to firebase
-function saveMessage(Name, Email, Phone, Message){
-  var newMessageRef = messagesRef.push();
-  newMessageRef.set({
+function saveForm(Name, Email, Phone, Message){
+  var newContactRef = contactRef.push();
+  newContactRef.set({
     Name: Name,
     Email: Email,
     Phone: Phone,
