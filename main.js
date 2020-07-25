@@ -11,32 +11,52 @@
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
+ firebase.analytics();
  firebase.database();
 
-  var MessagesRef = firebase.database().ref('messages');
-  document.getElementById('contact-form').addEventListener('submit',submitForm);
+// Reference messages collection
+var messagesRef = firebase.database().ref('messages');
 
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+// Submit form
 function submitForm(e){
-	e.preventDefault();
+  e.preventDefault();
 
+  // Get values
+  var Name = getInputVal('Name');
+  var Email = getInputVal('Email');
+  var Phone = getInputVal('Phone');
+  var Message = getInputVal('Message');
 
-	var Name = getInputVal('Name');
-		var Email = getInputVal('Email');
-	var Phone = getInputVal('Phone');
-	var Message = getInputVal('Message');
-	saveMessage( Name,Email,Phone,Message);
+  // Save message
+  saveMessage(Name, Email, Phone, Message);
 
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  // Clear form
+  document.getElementById('contactForm').reset();
 }
-function getInputVal(id) {
-	return document.getElementById(id).value;
-	// body...
+
+// Function to get get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
 }
-function saveMessage(Name,Email,Phone,Message){
-	var newMessagesRef = messagesRef.push();
-	newMessagesRef.set({
-		Name:Name,
-		Email:Email,
-		Phone:Phone,
-	Message:Message
-	});
+
+// Save message to firebase
+function saveMessage(Name, Email, Phone, Message){
+  var newmessageRef = messagesRef.push();
+  newmessageRef.set({
+    Name: Name,
+    Email:Email,
+    Phone:Phone,
+    Message:Message
+  });
 }
