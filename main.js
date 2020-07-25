@@ -11,12 +11,9 @@
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
- firebase.analytics();
-
- var messagesRef = firebase.database().ref('messages');
-
-
-document.getElementbyId ("Displayform").addEventListener( 'Submit', submitform);
+  firebase.analytics();
+  var messagesRef = firebase.database().ref('messages');
+  document.getElementById('contactform').addEventListener('submit', submitForm);
 
 function submitform(e){
   e.preventDefault();
@@ -26,9 +23,9 @@ function submitform(e){
   var Phone = getInputVal('Phone');
   var Message = getInputVal('Message') ;
 
-  
+
   saveMessage(Title,Name,Email,Phone,Message);
-  document.getElementbyId('Displayform').reset();
+  document.getElementbyId('contactform').reset();
 }
 
 
@@ -38,7 +35,7 @@ function getInputVal(id){
 
 
 function saveMessage(Title,Name,Email,Phone,Message){
-  var newContactRef = contactRef.push();
+  var newMessageRef = messageRef.push();
   newMessageRef.set({
 
     Title : Title,
