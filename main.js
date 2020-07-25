@@ -11,7 +11,8 @@
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
-  firebase.database();
+ firebase.analytics();
+ firebase.database();
 
 // Reference messages collection
 var messagesRef = firebase.database().ref('messages');
@@ -32,19 +33,7 @@ function submitForm(e){
   // Save message
   saveMessage(Name, Email, Phone, Message);
 
-  // Show alert
-  document.querySelector('.alert').style.display = 'block';
-
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },3000);
-
-  // Clear form
-  document.getElementById('contactForm').reset();
-}
-
-// Function to get get form values
+  // Function to get get form values
 function getInputVal(id){
   return document.getElementById(id).value;
 }
@@ -56,6 +45,6 @@ function saveMessage(Name, Email, Phone, Message){
     Name: Name,
     Email:Email,
     Phone:Phone,
-    Message:Message
+    Message:Message,
   });
 }
