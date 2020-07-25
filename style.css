@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap');
+body{
+  background: url(https://cdn141.picsart.com/234997542005202.jpg);
+  background-size: auto;
+  font-family: "Lexend Zetta";
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+  word-spacing: 5px;
+  letter-spacing: -2px;
+
+}
+
+h1{
+  border: 5px solid #a00;
+  color: #a00;
+}
+
+
+form{background-color: #eee;
+background-size: 100%;
+  border: 2px solid #000;
+
+}
+input{
+}
