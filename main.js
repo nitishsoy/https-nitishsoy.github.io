@@ -14,12 +14,14 @@
  firebase.analytics();
 
   var MessagesRef = firebase.database().ref('messages');
-  document.getElementById('contact-form').addEventListener('submit',submitform);
+  document.getElementById('contact-form').addEventListener('submit',submitForm);
 
 function submitForm(e){
 	e.preventDefault();
+
+
 	var Name = getInputVal('Name');
-		var Email = getInputVal('Email');message
+		var Email = getInputVal('Email');
 	var Phone = getInputVal('Phone');
 	var Message = getInputVal('Message');
 	saveMessage( Name,Email,Phone,Message);
@@ -29,9 +31,9 @@ function getInputVal(id) {
 	return document.getElementById(id).value;
 	// body...
 }
-function saveMessage(first_name,last_name,email,telephone,comments){
-	var newMessageRef = messagesRef.push();
-	newMessageRef.set({
+function saveMessage(Name,Email,Phone,Message){
+	var newMessagesRef = messagesRef.push();
+	newMessagesRef.set({
 		Name:Name,
 		Email:Email,
 		Phone:Phone,
