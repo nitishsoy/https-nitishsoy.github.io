@@ -13,19 +13,18 @@
   firebase.initializeApp(firebaseConfig);
   firebase.database();
 
-    var messagesRef = firebase.database().ref('messages');
-document.getElementById('contactform').addEventListener('submit', submitform);
+    var contactRef = firebase.database().ref().child('contactform');
+document.getElementById('contactform').addEventListener('submit',submitform);
 
 function submitform(e){
   e.preventDefault();
-  var Title = getInputVal('Title');
   var Name = getInputVal('Name');
-  var Email = getInputVal('Email') ;
+  var Email = getInputVal('Email');
   var Phone = getInputVal('Phone');
-  var Message = getInputVal('Message') ;
+  var Message = getInputVal('Message');
 
 
-  saveMessage(Title,Name,Email,Phone,Message);
+  saveForm(Name,Email,Phone,Message);
   document.getElementbyId('contactform').reset();
 }
 
@@ -35,11 +34,10 @@ function getInputVal(id){
 }
 
 
-function saveMessage(Title,Name,Email,Phone,Message){
-  var newmessageRef = messageRef.push();
-  newmessageRef.set({
+function saveForm(Name,Email,Phone,Message){
+  var newcontactRef = contactRef.push();
+  newcontactRef.set({
 
-    Title : Title,
     Name : Name,
     Email : Email,
     Phone : Phone,
