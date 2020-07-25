@@ -1,21 +1,20 @@
-const firebaseConfig = {
-apiKey: "AIzaSyDsBsKDexJXXBEUBnNXHPJ6Ex3WkVzIG8k",
-authDomain: "contact-form-54854.firebaseapp.com",
-databaseURL: "https://contact-form-54854.firebaseio.com",
-projectId: "contact-form-54854",
-storageBucket: "contact-form-54854.appspot.com",
-messagingSenderId: "440888530197",
-appId: "1:440888530197:web:de723f45ae396a520d451c",
-measurementId: "G-L0SW229LBF"
-};3
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+// Your web app's Firebase configuration
+ var firebaseConfig = {
+   apiKey: "AIzaSyBNOzSGs-hW4N4JD_-fTLXyV1wfNySVPVo",
+   authDomain: "contact-form-d72a3.firebaseapp.com",
+   databaseURL: "https://contact-form-d72a3.firebaseio.com",
+   projectId: "contact-form-d72a3",
+   storageBucket: "contact-form-d72a3.appspot.com",
+   messagingSenderId: "151559915079",
+   appId: "1:151559915079:web:afd91cf57012afe8389362",
+   measurementId: "G-XPDHH4P67V"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+ firebase.analytics();
 
+ var messagesRef = firebase.database().ref('messages');
 
-
-var contactRef= firebase.database().ref().child("ContactForm");
 
 document.getElementbyId ("Displayform").addEventListener( 'Submit', submitform);
 
@@ -26,7 +25,9 @@ function submitform(e){
   var Email = getInputVal('Email') ;
   var Phone = getInputVal('Phone');
   var Message = getInputVal('Message') ;
-  saveform(Title,Name,Email,Phone,Message);
+
+  
+  saveMessage(Title,Name,Email,Phone,Message);
   document.getElementbyId('Displayform').reset();
 }
 
@@ -36,14 +37,14 @@ function getInputVal(id){
 }
 
 
-function saveform(Title,Name,Email,Phone,Message){
+function saveMessage(Title,Name,Email,Phone,Message){
   var newContactRef = contactRef.push();
-  newContactRef.set({
+  newMessageRef.set({
 
     Title : Title,
     Name : Name,
     Email : Email,
     Phone : Phone,
     Message : Message
-  })
+  });
 }
