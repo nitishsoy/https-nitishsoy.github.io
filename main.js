@@ -11,8 +11,9 @@
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  var messagesRef = firebase.database().ref('messages');
+ firebase.analytics();
+ 
+    var messagesRef = firebase.database().ref('messages');
   document.getElementById('contactform').addEventListener('submit', submitForm);
 
 function submitform(e){
