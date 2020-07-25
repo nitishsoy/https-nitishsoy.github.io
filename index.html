@@ -6,21 +6,25 @@
 		<link rel="stylesheet" href="style.css"/>
 	</head>
 	<body align="center" >
-		<form>
+		<form id="Displayform" >
 			<h1>CONTACT US</h1>
 			<h2>We Will Respond as soon as possible</h2>
 			<h4> <b>Title</b> </h4>
-		<input type="radio" name="Gender">Mr.
-		<input type="radio" name="Gender">Mrs.<br>
+		<input type="radio" id="Title">Mr.
+		<input type="radio" id="Title">Mrs.<br>
 			<h4><b>Name</b> </h4>
-			<input type="text" name="" placeholder="Full Name" required><br>
+			<input type="text" id="Name" placeholder="Full Name" required><br>
 			<h4><b>E-mail</b> </h4>
-			<input type="text" name="email" placeholder="Valid E-mail" required><br>
-			<h4><b>Phone Number</b> </h4>
-			<input type="number" name="Phone No." placeholder="Phone No." required><br>
+			<input type="text" id="Email" placeholder="Valid E-mail" required><br>
+			<h4><b>Phone</b> </h4>
+			<input type="number" id="Phone" placeholder="Phone No." required><br>
 			<h3><b>Enter your message</b> </h3>
-			<textarea name="message" rows="5" cols="60" placeholder="Enter message"  ></textarea required><br><br>
+			<textarea name="message" size="100px"  placeholder="Enter message"  ></textarea required><br><br>
 			<input type="submit" name="Submit" >
 			<input type="reset" name="Reset" ><br><br>
 		</form>
+				<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+<script src="main.js" charset="utf-8"></script>
 	</body>
+	</html>
