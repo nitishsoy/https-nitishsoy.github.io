@@ -11,10 +11,10 @@ var firebaseConfig = {
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
- firebase.analytics();
+ firebase.database();
 
 
-  var messagesRef = firebase.database().ref('messages');
+  var MessagesRef = firebase.database().ref('messages');
   document.getElementById('contactform').addEventListener('submit', submitForm);
 
 function submitForm(e){
