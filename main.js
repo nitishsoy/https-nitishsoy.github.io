@@ -14,7 +14,7 @@
  firebase.analytics();
 
   var MessagesRef = firebase.database().ref('messages');
-  document.getElementById('contact-form').addEventListener('submit', submitForm);
+  document.getElementById('contact-form').addEventListener('submit',submitForm);
 
 function submitForm(e){
 	e.preventDefault();
