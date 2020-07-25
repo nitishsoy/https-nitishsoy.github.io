@@ -51,8 +51,8 @@ function getInputVal(id){
 
 // Save message to firebase
 function saveMessage(Name, Email, Phone, Message){
-  var newmessageRef = messagesRef.push();
-  newmessageRef.set({
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
     Name: Name,
     Email:Email,
     Phone:Phone,
