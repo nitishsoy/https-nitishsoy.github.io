@@ -17,13 +17,13 @@ firebase.analytics();
 
 
 // Reference messages collection
-var contactRef = firebase.database().ref().child('contactForm')
+var contactRef = firebase.database().ref().child('contactForm');
 
 // Listen for form submit
 document.getElementById('displayForm').addEventListener('submit', submitForm);
 
 // Submit form
-function submitForm(e)
+function submitForm(e){
   e.preventDefault();
 
   // Get values
@@ -32,11 +32,25 @@ function submitForm(e)
   var Phone = getInputVal('Phone');
   var Message = getInputVal('Message');
 
-  saveForm(Name,Email,Phone,Message);{
-    document.getElementById('displayForm').reset);
+  saveForm(Name,Email,Phone,Message);
+
+  // Show alert
+document.querySelector('.alert').style.display = 'block';
+
+// Hide alert after 3 seconds
+setTimeout(function(){
+ document.querySelector('.alert').style.display = 'none';
+},3000);
+
+// Clear form
+
+    document.getElementById('displayForm').reset();
+  }
 
     // Function to get get form values
   function getInputVal(id){
+
+
     return document.getElementById(id).value;
   }
 
